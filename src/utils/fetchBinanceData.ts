@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { TBinanceRequestData } from '../types/binanceData';
-import { formatBinanceData } from './formatBinanceData';
+import { TFetchDataQuery } from '../types/global';
 
-export const fetchBinanceData = async (data: { symbol: string; interval: string; startDate: Date; endDate: Date; limit?: number }) => {
+export const fetchBinanceData = async (data: TFetchDataQuery) => {
     const BINANCE_DATA_URL = 'https://api.binance.com/api/v3/klines';
     const { symbol, interval, startDate, endDate, limit } = data;
 
@@ -12,9 +12,7 @@ export const fetchBinanceData = async (data: { symbol: string; interval: string;
     try {
         const request = await axios.get(BINANCE_DATA_URL + params);
 
-        const binanceData = formatBinanceData(request.data as TBinanceRequestData[]);
-
-        return binanceData;
+        return request.data as TBinanceRequestData[];
     } catch (err) {
         console.log('Error during fetching Binance data ', err);
     }

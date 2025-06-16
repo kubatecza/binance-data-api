@@ -18,6 +18,7 @@ const priceSnapshotIntervalSchema = new Schema<TPriceSnapshotInterval>({
 });
 
 const priceSnapshotSchema = new Schema({
+    symbol: String,
     startDate: Date,
     endDate: Date,
     intervals: [priceSnapshotIntervalSchema]
