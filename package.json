@@ -1,5 +1,5 @@
 {
-    "name": "trading-bot",
+    "name": "binance-data-api",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
