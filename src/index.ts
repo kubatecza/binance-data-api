@@ -12,7 +12,7 @@ const startServer = async () => {
         console.log(`Server listening on port https:localhost:${PORT}`);
     });
 
-    await fetchBinanceData({ symbol: 'BTCUSDT', interval: '1d', startDate: new Date('2025-05-16T00:00:00Z'), endDate: new Date('2025-06-16T00:00:00Z') });
+    // await fetchBinanceData({ symbol: 'BTCUSDT', interval: '1d', startDate: new Date('2025-05-16T00:00:00Z'), endDate: new Date('2025-06-16T00:00:00Z') });
 };
 
 startServer();
